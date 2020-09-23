@@ -1,12 +1,15 @@
 version = 1
 
+exclude_patterns = [ "**/dist/**" ]
+test_patterns = ["**/test/**"]
+
 [[analyzers]]
 name = "javascript"
 enabled = true
 
   [analyzers.meta]
-  module_system = "commonjs"
   environment = [
     "nodejs",
     "browser"
   ]
+  dependency_file_paths = [ "packages/moon-browser/package.json" , "packages/moon/package.json", "packages/moon-compiler/package.json", "packages/moon-cli/package.json" ]
